@@ -29,3 +29,17 @@ function check($a, $b)
 }
 
 var_dump(check(20, 25));
+echo '<br>';
+
+function checkTrueFalse(bool $var = true)
+{
+    if ($var == true) {
+        return 1;
+    }
+    return 0;
+}
+
+$a = false;
+echo checkTrueFalse();
+echo '<br>';
+
