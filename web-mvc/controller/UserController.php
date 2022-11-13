@@ -1,7 +1,10 @@
 <?php
+
+use Model\User\user;
+
 include('web-mvc/model/db.php');
 include('web-mvc/model/User.php');
-class UserContrller
+class UserController
 {
     public static function index()
     {
@@ -78,7 +81,7 @@ class UserContrller
                 break;
             case 'delete':
                 $id = filter_input(INPUT_GET, 'id');
-                User::delete($id);
+                user::delete($id);
                 $user = user::getUser();
                 include('web-mvc/view/ListUser.php');
                 break;
@@ -110,4 +113,4 @@ class UserContrller
         }
     }
 }
-UserContrller::index();
+UserController::index();

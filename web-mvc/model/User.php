@@ -1,4 +1,10 @@
 <?php
+
+namespace Model\User;
+
+use Model\Database\Database;
+use PDOException;
+
 class user
 {
     public static function getUser()
@@ -61,7 +67,7 @@ class user
         try {
             $query = "DELETE FROM users WHERE id = :id";
             $statement = $db->prepare($query);
-            $statement->bindvalue(':id', $id);
+            $statement->bindValue(':id', $id);
             $statement->execute();
             $statement->closeCursor();
         } catch (\Throwable $th) {
@@ -75,7 +81,7 @@ class user
         try {
             $query = "SELECT * FROM users WHERE id = :id";
             $statement = $db->prepare($query);
-            $statement->bindvalue(':id', $id);
+            $statement->bindValue(':id', $id);
             $statement->execute();
             $result = $statement->fetch();
             return $result;

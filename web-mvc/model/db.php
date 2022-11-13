@@ -1,5 +1,10 @@
 <?php
 
+namespace Model\Database;
+
+use PDO;
+use PDOException;
+
 class Database
 {
     private static $dsn = 'mysql:host=db;dbname=user';
